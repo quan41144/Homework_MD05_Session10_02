@@ -1,0 +1,16 @@
+# 1. Chuyển sang root
+sudo su -
+2. tạo user mới (deploy)
+adduser deploy
+3. cấp quyền sudo cho user
+usermod -aG sudo deploy
+4. tải docker engine và docker compose
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+5. thêm user 'deploy' vào group 'docker'
+usermod -aG docker deploy
+6. đăng nhập sang user 'deploy'
+su - deploy
+7. phiên bản docker
+docker --version
+docker compose version
